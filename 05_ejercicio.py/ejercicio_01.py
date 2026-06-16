@@ -13,15 +13,16 @@
 # Escribe tu solución debajo de este comentario.
 
 
-stocks = [7,20,20,20,20]
+stocks = [9,20,20,20,20]
 
 suma = sum(stocks)
+print("La suma del Stock es",suma)
 
 bajo_stock = False
 
 for i, stock in enumerate(stocks, start=1):
-    if stock < 9:
-        print(f"Producto {i}: {stock} en Stock, debes reabastecer el producto.")
+    if stock < 10:
+        print(f"Producto {i}: Tiene {stock} unidades.")
         bajo_stock = True
 if not bajo_stock:
-    print("Todos los productos estan abastecidos")
+    print("Todos los productos estan abastecidos.")

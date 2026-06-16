@@ -12,11 +12,11 @@
 # 2. Usa operadores lógicos (and, or) para verificar las condiciones.
 # 3. Muestra un mensaje indicando si el acceso está permitido o denegado.
 
-edad = int(input("Ingresa tu edad"))
-membresia = input("Tienes mebresia (S/N)").lower()
-codigo = input("Tienes un codigo de invitación (S/N)").lower()
+edad = int(input("Por favor ingresa tu edad: "))
+membreria = input("Tienes Membresia (S/N)").lower()
+codigo = input("Tienes codigo de invitado (S/N)").lower()
 
-if edad >= 18 and (membresia == "s" or codigo == "s"):
-    print("Tu datos son correctos")
+if edad >= 18 and (membreria == "s" or codigo == "s"):
+    print("Puedes ingresar")
 else:
-    print("Tus datos no son correctos")
+    print("No puedes ingresar al sistema. ")

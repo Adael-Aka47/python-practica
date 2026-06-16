@@ -19,10 +19,7 @@ matriz = []
 
 # Ingreso de datos
 for i in range(3):
-    fila = []
-    for j in range(3):
-        r = int(input(f"Persona {i+1}, pregunta {j+1}: "))
-        fila.append(r)
+    fila = [int(input(f"Persona {i+1}, pregunta {j+1}: ")) for j in range(3)]
     matriz.append(fila)
 
 # Mostrar matriz
@@ -32,8 +29,8 @@ for fila in matriz:
 
 # Promedio por persona
 print("\nPromedio por persona:")
-for i in range(3):
-    prom = sum(matriz[i]) / 3
+for fila in matriz:
+    prom = sum(fila) / len(fila)
     print(prom)
     if prom < 3:
         print("Baja satisfacción")
@@ -41,5 +38,5 @@ for i in range(3):
 # Promedio por pregunta
 print("\nPromedio por pregunta:")
 for j in range(3):
-    prom = (matriz[0][j] + matriz[1][j] + matriz[2][j]) / 3
+    prom = sum(fila[j] for fila in matriz) / len(matriz)
     print(prom)

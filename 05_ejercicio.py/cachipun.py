@@ -25,12 +25,6 @@ def comprobar_ganador(jugador, cpu):
     return False
 
 player = input("Ingresa tu opción (o Salir para terminar): ").lower
-while True:
-    if player == "salir":
-        print("Fin del juego")
-    if player != opciones:
-        print("Opción no valida")
-    break
 computer = random.choice(opciones)
 if cpu == False:
     cpu += 1

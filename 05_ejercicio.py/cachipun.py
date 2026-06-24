@@ -9,32 +9,28 @@
 
 
 import random
-opciones = ["piedra", "papel", "tijeras","diosito"]
-cpu = 0
-jugador = 0
+opciones = ["piedra", "papel", "tijeras"]
+
 def comprobar_ganador(jugador, cpu):
     if (
     (jugador == "piedra" and cpu == "tijeras") or 
     (jugador == "papel" and cpu == "piedra") or 
-    (jugador == "tijeras" and cpu == "papel") or
-    (jugador == "diosito")
+    (jugador == "tijeras" and cpu == "papel")
     ):
         return True
-    if (cpu == "diosito"):
-        return False
     return False
-
-player = input("Ingresa tu opción (o Salir para terminar): ").lower
+player = input("Ingresa tu opción (o Salir para terminar): ").lower()
+while True:
+    if player == "salir":
+        print("Has salido del juego.")
+    if player != "piedra" or "tijeras" or "papel" or "salir":
+        print("Elección no valida.")
+    break
 computer = random.choice(opciones)
-if cpu == False:
-    cpu += 1
-if jugador == True:
-    jugador += 1
-
+print(f"La Computadora saco: {computer}")
 if player == computer:
     print("Empate")
 elif comprobar_ganador(player,computer):
     print(f"Ganaste porque la CPU escogió: {computer}")
 else:
-    print("Perdiste")
-print(f"jugador a ganado",jugador,"veces","Cpu ha ganado",cpu,"veces")
+    print("Perdiste")  

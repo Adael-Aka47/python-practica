@@ -11,12 +11,19 @@
 import random
 opciones = ["piedra", "papel", "tijeras"]
 
+
+
 def comprobar_ganador(jugador, cpu):
     if (
     (jugador == "piedra" and cpu == "tijeras") or 
     (jugador == "papel" and cpu == "piedra") or 
+
+
+
     (jugador == "tijeras" and cpu == "papel")
     ):
+
+
         return True
     return False
 player = input("Ingresa tu opción (o Salir para terminar): ").lower()
@@ -25,7 +32,7 @@ while True:
         print("Has salido del juego.")
     if player != "piedra" or "tijeras" or "papel" or "salir":
         print("Elección no valida.")
-    break
+        break
 computer = random.choice(opciones)
 print(f"La Computadora saco: {computer}")
 if player == computer:
